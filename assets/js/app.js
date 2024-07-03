@@ -15,9 +15,7 @@ let index = 0;
 
 Dots.forEach((itemDots, index) => {
     itemDots.addEventListener('click', () => {
-        Dots.forEach((itemRemove) => {
-            itemRemove.classList.remove('active');
-        });
+        removeActive(Dots);
 
         if(index > feedbackItems.length - 1) {
             index = index;
@@ -29,3 +27,9 @@ Dots.forEach((itemDots, index) => {
         });
     });
 });
+
+function removeActive(Dots) {
+    Dots.forEach((itemRemove) => {
+        itemRemove.classList.remove('active');
+    });
+}

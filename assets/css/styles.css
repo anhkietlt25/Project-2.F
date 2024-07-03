@@ -469,13 +469,14 @@ a {
     line-height: 1.86; /* 185.714% */
 }
 
-.feedback-item .info-feedback .dots {
+.dots {
     display: flex;
     align-items: center;
-    margin-top: 28px;
+    justify-content: center;
+    margin-top: 30px;
 }
 
-.feedback-item .info-feedback .dots .dot {
+.dots .dot {
     margin-right: 6px;
     width: 6px;
     height: 6px;
@@ -484,7 +485,7 @@ a {
     cursor: pointer;
 }
 
-.feedback-item .info-feedback .dots .dot.active {
+.dots .dot.active {
     background: var(--btn-color-primary);
     cursor: default;
 }

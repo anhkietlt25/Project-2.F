@@ -1,22 +1,31 @@
-const list = document.querySelector('.feedback .feedback-list')
-// console.log(list)
-const itemList = document.querySelectorAll('.feedback .feedback-list .feedback-item')
-// console.log(itemList)
-const dots = document.querySelectorAll('.dots .dot')
-// console.log(dots)
-const next = document.getElementById('next')
-// console.log(next)
-const pre = document.getElementById('previous')
-// console.log(pre)
+const Dots = document.querySelectorAll('.feedback .dots .dot');
+// console.log(Dots);
+const feedbackItems = document.querySelectorAll('.feedback-list .feedback-item');
+// console.log(feedbackItems);
+let index = 0;
 
-let active = 0
+// Dots.forEach((item, index) => {
+//     item.addEventListener('click', () => {
+//         feedbackItems.forEach((item) => {
+//             item.classList.remove('active');
+//         });
+//         feedbackItems[index].classList.add('active');
+//     });
+// });
 
-next.onclick = function() {
-    active += 1
-    renderFeedBack()
-}
+Dots.forEach((itemDots, index) => {
+    itemDots.addEventListener('click', () => {
+        Dots.forEach((itemRemove) => {
+            itemRemove.classList.remove('active');
+        });
 
-function renderFeedBack() {
-    let checkLeft = itemList[active].offsetLeft
-    list.style.left = -checkLeft + 'px'
-}
+        if(index > feedbackItems.length - 1) {
+            index = 0;
+        }
+        feedbackItems.forEach((item) => {
+            item.style.transform = `translateX(-${1170 * index}px)`;
+            itemDots.classList.add('active');
+            // console.log(item.style.transform = `translateX(-${1170 * index}px)`);
+        });
+    });
+});

@@ -20,7 +20,7 @@ Dots.forEach((itemDots, index) => {
         });
 
         if(index > feedbackItems.length - 1) {
-            index = 0;
+            index = index;
         }
         feedbackItems.forEach((item) => {
             item.style.transform = `translateX(-${1170 * index}px)`;

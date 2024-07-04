@@ -14,17 +14,15 @@ const feedbackItems = document.querySelectorAll('.feedback-list .feedback-item')
 
 // Sử dụng forEach để lần lượt gán sự kiện click cho từng đoạn feedback và chuyển đổi feedback hiện tại
 Dots.forEach((itemDots, index) => {
+    // let autoLoadfeedback = setInterval(() => {itemDots.click()}, 6000);
     itemDots.addEventListener('click', () => {
         // console.log(itemDots, index);
         removeActive(Dots);
 
-        if(index > feedbackItems.length - 1) {
-            index = 0;
-        }
         feedbackItems.forEach((item) => {
             item.style.transform = `translateX(-${1170 * index}px)`;
             itemDots.classList.add('active');
-            console.log(item.style.transform = `translateX(-${1170 * index}px)`);
+            // console.log(item.style.transform = `translateX(-${1170 * index}px)`);
         });
     });
 });
